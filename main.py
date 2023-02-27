@@ -7,7 +7,7 @@ from weather_display import WeatherDisplay
 from weather_client import WeatherClient
 
 def main():
-    model = WeatherClient()
+    model = WeatherClient(latitude='38.96656', longitude='-77.361784')
     view = WeatherDisplay()
 
     try:
