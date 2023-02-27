@@ -29,7 +29,6 @@ class WeatherDisplay(object):
         self.font_h3 = graphics.Font()
         self.font_h3.LoadFont('fonts/5x7.bdf')
 
-
     def display(self, data):
         self.matrix.Clear()
         self.display_weather(data['description'], data['curr_temp'], data['low_temp'], data['high_temp'])
@@ -48,9 +47,9 @@ class WeatherDisplay(object):
         graphics.DrawText(self.matrix, self.font_h2, 35, 51, self.blue, low_temp)
 
     def display_aqi(self, aqi):
-        color = [self.green, self.yellow, self.orange, self.red, self.purple][aqi-1]
-        text = ['Good', 'Fair', 'Moderate', 'Poor', 'Very poor'][aqi-1]
-        graphics.DrawText(self.matrix, self.font_h2, 2, 21, color, f'AQI: {text}')
+        aqi_color = [self.green, self.yellow, self.orange, self.red, self.purple][aqi-1]
+        aqi_text = ['Good', 'Fair', 'Moderate', 'Poor', 'Very poor'][aqi-1]
+        graphics.DrawText(self.matrix, self.font_h2, 2, 21, aqi_color, f'AQI: {aqi_text}')
 
     def display_datetime(self, dt):
         time_str = dt.strftime('%-I:%M')
