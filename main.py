@@ -4,13 +4,16 @@ import sys
 import time
 
 from weather_display import WeatherDisplay
+from weather_client import WeatherClient
 
 def main():
+    model = WeatherClient()
     view = WeatherDisplay()
 
     try:
         while True:
-            view.display()
+            model.query_weather()
+            view.display(model.data)
             time.sleep(60)
     except KeyboardInterrupt:
         print("Exiting\n")

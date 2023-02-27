@@ -15,7 +15,7 @@ class WeatherDisplay(object):
         self.matrix = RGBMatrix(options = options)
 
 
-    def display(self):
+    def display(self, data):
         image_file = '/home/pi/Pictures/cat.png'
         image = Image.open(image_file)
         image.thumbnail((self.matrix.width, self.matrix.height), Image.ANTIALIAS)
